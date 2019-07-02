@@ -1,0 +1,42 @@
+<mvc:View
+	controllerName="sap.ui.demo.walkthrough.controller.SurveyQuestion"
+	xmlns:form="sap.ui.layout.form"
+	xmlns="sap.m"
+	xmlns:mvc="sap.iu.core.mvc">
+	<Panel
+		headerText="{i18n>createSQPanelTitle}"
+		class="sapUiResponsiveMargin"
+		width="auto" >
+		<content>
+			<form:SimpleForm editable="true">
+				<TextArea
+					id="TypeQ"
+					placeholder="{i18n>placeholderQuestion}"
+					value="{/InputValue}"
+					valueLiveUpdate="true"
+					liveChange="handleLiveChange"
+					width="60%"/>
+				<VBox class="sapUiResponsiveMargin">
+					<RadioButton
+						text="Yes"/>
+					<RadioButton
+						text="No"/>
+				</VBox>
+			</form:SimpleForm>
+			<Button
+				id="saveQDialogButton"
+				icon="sap-icon://save"
+				text="{i18n>saveQDialogButtonText}"
+				press=".onOpenQDialog"
+				class="sapUiResponsiveMargin"/>
+			<Button
+				text="{i18n>showEnterQButtonText}"
+				press=".getQuestion"
+				class="sapUiSmallMargin"/>
+			<FormattedText
+				htmlText="{/InputValue}"
+				class="sapUiResponsiveMargin sapThemeHighlight-asColor myCustomText"/>
+			
+		</content>
+	</Panel>
+</mvc:View>
